@@ -9,11 +9,14 @@
 	<script language="javascript" src="./js/dessiner.js"></script>
 	<script language="javascript" src="./js/horloge.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
+
 </head>
 <!-- <body onload="gererWS();mettreAJourData();Clock()" > -->
 
 <body onload="gererWS();Clock()" >
 	<header>
+			<p window.alert("Hello"); ></p>
+
 		<img src="./images/ecole.jpg" alt=ecole width=50px height=50px align=right>
 		<img src="./images/user.jpg" alt=user width=50px height=50px align=left>
 		<img src="./images/logoCubeSA.jpg" alt=logoCubeSA width=50px height=50px align="left">
@@ -22,6 +25,21 @@
 	<!--Partie Navigation-->
 	<nav>
 		<p id="presentationVille"> Prévisions météorologiques</p>
+		<!-- code meteo -->
+		<div class="input">
+			<input type="text" placeholder="Entrez une ville" class="input_text">
+			<input type="submit" value="Entrer" class="submit">
+		</div>
+
+	<div class="container">
+		<div class="card">
+			<h1 class="name" id="name"></h1>
+			<p class="temp"></p>
+			<p class="clouds"></p>
+			<p class="desc"></p>
+		</div>
+	</div>
+		<!-- code meteo -->
 	</nav>
 	<!--Fin de la partie navigation-->
 
@@ -70,10 +88,13 @@
 
 <!--Pied de page-->
 <footer>
-	<div>Lycée de Lattre de Tassigny 2019 		<p id="insererHorloge"></p>
+	<iframe width="100%" height="300px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/fr/map/carte-sans-nom_496221?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false">
+	</iframe><p><a href="//umap.openstreetmap.fr/fr/map/carte-sans-nom_496221">Voir en plein écran</a></p>  <!--UMap-->
+	<div>Lycée de Lattre de Tassigny 2020 		<p id="insererHorloge"></p>
 	</div>
 
 </footer>
 <!--Fin de pied de page-->
+<script language="javascript" src="./js/meteo.js"></script>
 </body>
 </html>
