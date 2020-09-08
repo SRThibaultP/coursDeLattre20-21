@@ -9,16 +9,16 @@
 	<script language="javascript" src="./js/dessiner.js"></script>
 	<script language="javascript" src="./js/horloge.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
+	<script language="javascript" src="./js/alert.js"></script>
+
+
 
 </head>
 <!-- <body onload="gererWS();mettreAJourData();Clock()" > -->
-
 <body onload="gererWS();Clock()" >
 	<header>
-			<p window.alert("Hello"); ></p>
-
-		<img src="./images/ecole.jpg" alt=ecole width=50px height=50px align=right>
-		<img src="./images/user.jpg" alt=user width=50px height=50px align=left>
+		<img src="./images/ecole.jpg" alt="ecole" id="ecole" width=50px height=50px align=right> <!-- Top right -->
+		<img src="./images/user.jpg" alt="user" id="user" width=50px height=50px align=left> <!-- Top left -->
 		<img src="./images/logoCubeSA.jpg" alt=logoCubeSA width=50px height=50px align="left">
 		Supervision chauffe eau solaire thermique
 	</header>
@@ -96,5 +96,7 @@
 </footer>
 <!--Fin de pied de page-->
 <script language="javascript" src="./js/meteo.js"></script>
+<script language="javascript" src="./js/reverse.js"></script>
+
 </body>
 </html>
