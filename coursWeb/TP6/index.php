@@ -9,19 +9,63 @@
 	<script language="javascript" src="./js/dessiner.js"></script>
 	<script language="javascript" src="./js/horloge.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
+
 	<script language="javascript" src="./js/alert.js"></script>
+
+	<script language="javascript" src="./js/changer.js"></script>
+
+
+
 
 
 
 </head>
 <!-- <body onload="gererWS();mettreAJourData();Clock()" > -->
+
+
+
+
 <body onload="gererWS();Clock()" >
 	<header>
-		<img src="./images/ecole.jpg" alt="ecole" id="ecole" width=50px height=50px align=right> <!-- Top right -->
-		<img src="./images/user.jpg" alt="user" id="user" width=50px height=50px align=left> <!-- Top left -->
-		<img src="./images/logoCubeSA.jpg" alt=logoCubeSA width=50px height=50px align="left">
-		Supervision chauffe eau solaire thermique
+
+
+
+
+
+
+		<img src="./images/ecole.jpg" id=ecole width=50px height=50px align=right>
+		<img src="./images/user.jpg" id=user width=50px height=50px align=left>
+		<img src="./images/logoCubeSA.jpg" id=logoCubeSA width=50px height=50px align="left">
+
+		<script type= "text/javascript">
+
+
+
+		var image1=document.getElementById("ecole").src;
+		var image2=document.getElementById("user").src;
+		var image3=document.getElementById("logoCubeSA").src;
+
+		alert(image1 +"\n" +image2  +"\n" +image3);
+
+		</script>
+
+
+		<h1 id="Titre" onclick="changer()"> Bienvenue </h1>
+
+		<script type="text/javascript">
+
+		var titreDeLaPage=document.getElementById("Titre");
+		var texte=titreDeLaPage.innerHTML;
+
+		alert(texte);
+</script>
+
+
+
+
 	</header>
+
+
 	<!--Partie Navigation-->
 	<nav>
 		<p id="presentationVille"> Prévisions météorologiques</p>
@@ -91,12 +135,15 @@
 	<iframe width="100%" height="300px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/fr/map/carte-sans-nom_496221?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false">
 	</iframe><p><a href="//umap.openstreetmap.fr/fr/map/carte-sans-nom_496221">Voir en plein écran</a></p>  <!--UMap-->
 	<div>Lycée de Lattre de Tassigny 2020 		<p id="insererHorloge"></p>
+		<script language="javascript" src="./js/showcss.js"></script>
 	</div>
 
 </footer>
 <!--Fin de pied de page-->
 <script language="javascript" src="./js/meteo.js"></script>
 <script language="javascript" src="./js/reverse.js"></script>
+<script language="javascript" src="./js/title.js"></script>
+
 
 </body>
 </html>
