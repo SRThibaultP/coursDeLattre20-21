@@ -9,7 +9,12 @@ int x;
 int y;
 public :
 Point(int a=0, int b=0) ;
-bool Coincide(Point &);
+Point(Point & pt) ;// Constructeur par recopie
+Point operator+(const Point & a);
+Point& operator=(const Point & a);
+bool operator==(const Point & a);
+Point& operator+=( const Point & a);
+bool Coincide(Point & p);
 //Point();
 //Point(int,int);
 ~Point();

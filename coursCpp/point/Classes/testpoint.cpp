@@ -7,10 +7,9 @@ p->Deplace(4);
 p->Affiche("Le point vaut :");
 p->Init(10);
 p->Affiche("Le point vaut desormais :");
-Point *pp;
-pp=new Point(); //nvelle zone de mémoire
-pp = p;
-p->Deplace(12,13);
+Point *pp=new Point(); //nvelle zone de mémoire
+*pp = *p;
+/*p->Deplace(12,13);
 pp->Deplace(5);
 p->Affiche("Le point p vaut ");
 pp->Affiche("Le point pp vaut ");
@@ -21,6 +20,15 @@ if( p->Coincide(*pp) )
 cout << "p et pp coincident !" << endl;
 if( pp->Coincide(*p) )
 cout << "pp et p coincident !" << endl;
+*/
+pp->Affiche();
+if((*pp)==(*p)){
+	cout<<"points identiques<<endl";
+	}
+else cout << "points différents "<<endl;
+delete pp;
+delete p;
+return 0;
 }
 
 

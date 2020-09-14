@@ -63,12 +63,29 @@ cout << strMesg << x << ", " << y << endl;
 }
 bool Point::Coincide(Point &p)
 {
-	if (this -> x == p.x && this -> y == p.y  ){
-		return true;
-	}
-	else {
-		return false;
-	}
-
+	return (this -> x == p.x && this -> y == p.y  );
+}
+Point Point::operator+(const Point & a){
+	Point p;
+	p.x = a.x + x;
+	p.y = a.y + y;
+	return p;
+}
+Point& Point::operator=(const Point & a)
+{
+	this->x=a.x;
+	this->y=a.y;
+	return *this;
+}
+bool Point::operator==(const Point & p){
+	if (p.x!=this->x) return false;
+	if (p.y!=this->y) return false;
+	return true;
+}
+Point& Point::operator+=( const Point & a)
+{
+this->x = a.x + this->x;
+this->y = a.y + this->y;
+return *this;
 }
 
