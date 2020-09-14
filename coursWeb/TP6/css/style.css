@@ -17,6 +17,9 @@ p#presentationVille{
 font-size: 20px;
 }
 
+#btnfond{
+	margin: 0px 0px 0px -1800px;
+}
 
 
 /*BODY*/
@@ -141,5 +144,9 @@ footer{
 	border-radius: 6px;
 
 }
+ .button {
+	 background-color: : 25%;
+ }
+
 
 /*END FOOTER*/

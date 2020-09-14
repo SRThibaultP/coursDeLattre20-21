@@ -13,6 +13,9 @@
 	<script language="javascript" src="./js/alert.js"></script>
 
 	<script language="javascript" src="./js/changer.js"></script>
+	<script language="javascript" src="./js/hoverimg.js"></script>
+	<script language="javascript" src="./js/couleur_fond.js"></script>
+
 
 
 
@@ -34,7 +37,7 @@
 
 
 		<img src="./images/ecole.jpg" id=ecole width=50px height=50px align=right>
-		<img src="./images/user.jpg" id=user width=50px height=50px align=left>
+		<img onmousehover="hoverimg()" src="./images/user.jpg" id=user width=50px height=50px align=left>
 		<img src="./images/logoCubeSA.jpg" id=logoCubeSA width=50px height=50px align="left">
 
 		<script type= "text/javascript">
@@ -51,6 +54,8 @@
 
 
 		<h1 id="Titre" onclick="changer()"> Bienvenue </h1>
+		<button id="btnfond" onclick="couleur_fond()">Couleur fond</button>
+
 
 		<script type="text/javascript">
 
