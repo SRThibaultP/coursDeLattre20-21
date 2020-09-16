@@ -13,14 +13,14 @@ public:
 	float getSolde();
 	void afficherSolde();
 	void afficherDerniereOperation(int n);
-	bool virementComptres(CompteBanque & mc, float somme);
+	bool virementComptes(CompteBanque & mc, float somme);
 	void afficherDerniereOperation();
 	void getId();
 
 	CompteBanque(int a=0, float b=20);
-	int GetIdent();
+	int GetId();
 	float GetSolde();
-	void SetIdent(int);
+	void SetId(int);
 	void SetSolde(float);
 	void Init(int a, float b);
 	void Init(int a);

@@ -1,12 +1,14 @@
 #include "comptebanque.h"
 
-int CompteBanque::GetIdent(){
+int CompteBanque::GetId(){
+	cout << "id: "<< ident << endl;
 	return ident;
 }
 float CompteBanque::GetSolde(){
+	cout << "solde: " << solde << endl;
 	return solde;
 }
-void CompteBanque::SetIdent(int a){
+void CompteBanque::SetId(int a){
 	this -> ident = a;
 }
 
@@ -35,3 +37,24 @@ void CompteBanque::afficheCompte()
 cout << this->ident<<" , " <<this->solde<< endl;
 }
 
+//la suite
+
+void CompteBanque::deposer(float somme){
+	solde = solde + somme;
+}
+
+bool CompteBanque::retirer(float somme){
+	float tmp;
+	tmp = solde - somme;
+	if(tmp>=0){
+		solde = tmp;
+		return true;
+	}
+	else return false;
+}
+
+bool CompteBanque::virementComptes(CompteBanque & mc, float somme) {
+	int tmp;
+	tmp = solde - somme;
+	mc.solde = mc.solde + tmp;
+}
