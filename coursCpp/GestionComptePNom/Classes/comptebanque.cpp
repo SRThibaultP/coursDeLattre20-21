@@ -42,7 +42,13 @@ cout << this->ident<<" , " <<this->solde<< endl;
 void CompteBanque::deposer(float somme){
 	solde = solde + somme;
 }
-
+//qu11
+CompteBanque& CompteBanque::operator+=(const CompteBanque &mc){
+	this -> ident = mc.ident + this -> ident;
+	this -> solde = mc.solde + this -> solde;
+	return *this;
+}
+//qu11
 bool CompteBanque::retirer(float somme){
 	float tmp;
 	tmp = solde - somme;

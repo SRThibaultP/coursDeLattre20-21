@@ -26,4 +26,6 @@ public:
 	void Init(int a);
 	void afficheCompte();
 	void newCompteBanque();
+	//qu11
+	CompteBanque& operator+=(const CompteBanque &mc);
 };
