@@ -10,6 +10,7 @@ int main() {
 	mcb->GetSolde();
 	mcb->GetId();
 	//la suite
+	cout << "deposer retirer mcb" << endl;
 	mcb->deposer(30);
 	mcb->GetSolde();
 	mcb->retirer(45);

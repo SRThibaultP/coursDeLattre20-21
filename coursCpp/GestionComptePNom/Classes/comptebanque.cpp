@@ -56,5 +56,10 @@ bool CompteBanque::retirer(float somme){
 bool CompteBanque::virementComptes(CompteBanque & mc, float somme) {
 	int tmp;
 	tmp = solde - somme;
-	mc.solde = mc.solde + tmp;
+	if(tmp >= 0){
+		mc.solde = mc.solde + somme;
+		solde = tmp;
+		return true;
+	}
+	else return false;
 }
