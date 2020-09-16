@@ -3,11 +3,11 @@ using namespace std ;
 
 class CompteBanque {
 	int ident;
-	int solde;
-	int *tab;
+	float solde;
+	float *tab;
 	int nboperations;
 public:
-	CompteBanque(int id, float so);
+	//CompteBanque(int id, float so);
 	void deposer(float somme);
 	bool retirer(float somme);
 	float getSolde();
@@ -17,5 +17,13 @@ public:
 	void afficherDerniereOperation();
 	void getId();
 
-	void AfficherCompte(char *strMsg);
+	CompteBanque(int a=0, float b=20);
+	int GetIdent();
+	float GetSolde();
+	void SetIdent(int);
+	void SetSolde(float);
+	void Init(int a, float b);
+	void Init(int a);
+	void afficheCompte();
+	void newCompteBanque();
 };
