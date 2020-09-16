@@ -1,11 +1,11 @@
 #include "point.h"
 
-int main ()
+/*int main ()
 {
 Point *p=new Point(1,2);
 p->Deplace(4);
 p->Affiche("Le point vaut :");
-p->Init(10);
+p->Init(10,8);
 p->Affiche("Le point vaut desormais :");
 Point *pp=new Point(); //nvelle zone de mémoire
 *pp = *p;
@@ -20,21 +20,45 @@ if( p->Coincide(*pp) )
 cout << "p et pp coincident !" << endl;
 if( pp->Coincide(*p) )
 cout << "pp et p coincident !" << endl;
-*/
+*//*
 pp->Affiche();
 if((*pp)==(*p)){
-	cout<<"points identiques<<endl";
+	cout<<"points identiques"<<endl;
 	}
 else cout << "points différents "<<endl;
+//Point *pt = new Point(1,2);
+Point *pt = new Point(*pp);
+pt->Affiche();
 delete pp;
 delete p;
+delete pt;
+return 0;
+}*/
+
+
+
+
+int main()
+{
+Point *p=new Point(7,2);
+p->Affiche();
+Point *pp=new Point(7,7);
+pp->Affiche();
+if ((*pp)==(*p))
+cout<<"points identiques"<<endl;
+else cout <<"points differents"<<endl;;
+Point *p1=new Point();
+p1->Affiche();
+// (*p1)=(*pp);
+// p1->Affiche();
+(*p1)=(*pp)+(*p);
+pp->Affiche();
+p->Affiche();
+p1->Affiche();
+(*p1)+=(*p);
+p1->Affiche();
 return 0;
 }
-
-
-
-
-
 
 
 

@@ -89,3 +89,8 @@ this->y = a.y + this->y;
 return *this;
 }
 
+Point::Point(Point & pt){
+	this->x= pt.x;
+	this->y= pt.y;
+}
+
