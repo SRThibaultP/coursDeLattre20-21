@@ -13,7 +13,7 @@
 </head>
 <!-- <body onload="gererWS();mettreAJourData();Clock()" > -->
 
-<body onload="gererWS();Clock()" >
+<body onload="gererWS();Clock();defaultStart();" >
 	<header>
 		<img src="./images/logoCubeSA.jpg" alt=logoCubeSA width=50px height=50px align="left">
 		Supervision chauffe eau solaire thermique
@@ -21,6 +21,7 @@
 	<!--Partie Navigation-->
 	<nav>
 		<p id="presentationVille"> Prévisions météorologiques</p>
+		<p id="nomVille">La Roche-sur-Yon</p>
 	</nav>
 	<!--Fin de la partie navigation-->
 
@@ -54,8 +55,10 @@
 </aside>
 <!--AFFICHAGE INFORMATION VOLET-->
 <aside id="schemaVolet"> <div class="separation"><a>Volet</a></div>
+
 </br>
 <div class="input" id="bouton2" style="display: none;">
+
 <input type="text" placeholder="Entrez une ville" class="input_text">
 <input type="submit" value="Entrer" class="submit">
 </div>
@@ -73,22 +76,26 @@
 
 
 <label class="switch">
-	<input type="checkbox"  onClick="alert()"  >
+	<input type="checkbox"  onClick="Leswitch()"  >
 		<span class="slider round">
+
 </span>
 </label>
 
-<p2> Pilotage manuelle </p2>
+<p2> Pilotage manuel </p2>
+
+
 
 <div class="range-wrap" id="bouton" style="display: none;">
+
+
 	<div class="range-value" id="rangeV"></div>
 	<input id="range" type="range" min="0" max="180" value="90" step="1">
 </div>
 
 <script language="javascript" src="./js/slider.js"></script>
 <script language="javascript" src="./js/meteo.js"></script>
-
-<script src="./js/alert.js"></script>
+<script language="javascript" src="./js/alert.js"></script>
 
 
 
@@ -105,7 +112,7 @@
 <!--Fin de la partie aside-->
 
 <!--Pied de page-->
-<footer>
+<footer >
 	<div>Lycée de Lattre de Tassigny 2019 		<p id="insererHorloge" ></p>
 	</div>
 

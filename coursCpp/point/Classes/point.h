@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std ;
-
+#ifndef CLASSES_POINT
+#define CLASSES_POINT
 
 class Point
 {
@@ -30,3 +31,5 @@ void SetX(int);
 void SetY(int);
 
 };
+
+#endif /* CLASSES_POINTCOL_H_ */

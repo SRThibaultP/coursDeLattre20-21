@@ -46,11 +46,11 @@ HDR = $(wildcard $(SRCDIR)/*.h)
 # On place ici les objets (.o) a linker dans les applications finales
 AUX_OBJECTS =  $(OBJDIR)/point.o
 UNITTEST_OBJECTS =
-RELEASE_OBJECTS = $(OBJDIR)/testpoint.o
+RELEASE_OBJECTS = $(OBJDIR)/main.o $(OBJDIR)/pointcol.o
 OBJECTS = $(AUX_OBJECTS) $(UNITTEST_OBJECTS) $(RELEASE_OBJECTS)
 # On place ici les exécutables à générer (testsunitaires et release)
 UNITTEST =
-RELEASE = $(RELEASEBIN)/testpoint
+RELEASE = $(RELEASEBIN)/main
 # On rajoute ici ce qui doit être généré
 all : $(BUILDDIR) $(OBJECTS) $(RELEASE) $(UNITTEST)
 # Cibles pour le nettoyage de la compilation
@@ -75,9 +75,9 @@ $(UNITTESTBIN)/exempleTesteur :
 	$(CC) $^ $(LIBSTEST) -o $@
 	$(AUX_OBJECTS) $(OBJDIR)/exempleTesteur.o
 # Production de la release
-$(RELEASEBIN)/testpoint : $(AUX_OBJECTS) $(OBJDIR)/testpoint.o
+$(RELEASEBIN)/main : $(AUX_OBJECTS) $(OBJDIR)/main.o
 	$(CC) $^ $(LIBS) -o $@
-#$(RELEASEBIN)/testpoint : $(AUX_OBJECTS) $(OBJDIR)/point.o
+#$(RELEASEBIN)/main : $(AUX_OBJECTS) $(OBJDIR)/point.o
 #	$(CC) $^ $(LIBS) -o $@
 # Création de l'arborescence pour le build
 $(BUILDDIR):

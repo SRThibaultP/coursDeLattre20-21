@@ -8,6 +8,9 @@ const
       //alert(range.value);
 		rangeV.innerHTML = `<span>${range.value}</span>`;
 		rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
+		document.getElementById("positionVolet").innerHTML = range.value;
+
 	};
+
 document.addEventListener("DOMContentLoaded", setValue);
 range.addEventListener('input', setValue);
