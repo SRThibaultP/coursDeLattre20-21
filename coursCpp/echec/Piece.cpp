@@ -8,6 +8,8 @@
 #include "Piece.h"
 
 Piece::Piece(char a='1', char b='2', char coul='b'){
-
+	this -> x = a;
+	this -> y = b;
+	this -> couleur = coul;
 }
 
