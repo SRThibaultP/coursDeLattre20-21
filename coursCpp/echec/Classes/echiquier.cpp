@@ -17,9 +17,9 @@ int main() {
 	Piece *p3 = new Piece('C', '1', 'n');
 	p3 -> Affiche();
 	cout << p -> calculerPosition() << endl;
-	cout << p -> deplacer('5', 'D') << endl;
-	p -> Affiche();
+	p -> deplacer('8', 'H');
 	cout << p -> calculerPosition() << endl;
+	p -> Affiche();
 }
 
 
