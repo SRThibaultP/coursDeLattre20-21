@@ -22,6 +22,7 @@ public :
 	//void Init(char a);
 	void Affiche();
 	void Affiche(char* strMesg);
+	~Piece();
 	int deplacer(char a, char b);
 	int calculerPosition();
 	char GetX();

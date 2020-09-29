@@ -46,7 +46,7 @@ HDR = $(wildcard $(SRCDIR)/*.h)
 # On place ici les objets (.o) a linker dans les applications finales
 AUX_OBJECTS =  $(OBJDIR)/Piece.o 
 UNITTEST_OBJECTS =
-RELEASE_OBJECTS = $(OBJDIR)/echiquier.o
+RELEASE_OBJECTS = $(OBJDIR)/echiquier.o $(OBJDIR)/Pion.o
 OBJECTS = $(AUX_OBJECTS) $(UNITTEST_OBJECTS) $(RELEASE_OBJECTS)
 # On place ici les exécutables à générer (testsunitaires et release)
 UNITTEST =

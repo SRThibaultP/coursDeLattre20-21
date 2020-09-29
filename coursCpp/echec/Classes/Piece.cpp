@@ -12,6 +12,10 @@ Piece::Piece(char a, char b, char coul){
 	Init(a,b,coul);
 }
 
+Piece::~Piece(){
+	cout << "--Destructeur--" << endl;
+}
+
 void Piece::Affiche(){
 cout << this->x<<" , " <<this->y<< " , " << this->couleur<<endl;
 }
