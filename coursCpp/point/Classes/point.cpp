@@ -5,6 +5,11 @@ void Point::Affiche()
 {
 cout << this->x<<" , " <<this->y<< endl;
 }
+void Point::AfficheTout()
+{
+	cout<<this<<"->"<<x<<" , "<<y<<endl;
+	Affiche();
+}
 
 int Point::GetX(){
 	return x;
@@ -28,7 +33,13 @@ Point::Point(int a, int b)
 {
 cout << "--Constructeur (a,b)--" << endl;
 Init(a,b);
+}/*
+Point::Point()
+{
+cout << "--Constructeur (a,b)--" << endl;
+Init(0,0);
 }
+*/
 Point::~Point()
 {
 cout << "--Destructeur--" << endl;
@@ -65,8 +76,9 @@ bool Point::Coincide(Point &p)
 {
 	return (this -> x == p.x && this -> y == p.y  );
 }
+
 Point Point::operator+(const Point & a){
-	Point p;
+	Point p(0,0);
 	p.x = a.x + x;
 	p.y = a.y + y;
 	return p;
@@ -87,10 +99,5 @@ Point& Point::operator+=( const Point & a)
 this->x = a.x + this->x;
 this->y = a.y + this->y;
 return *this;
-}
-
-Point::Point(Point & pt){
-	this->x= pt.x;
-	this->y= pt.y;
 }
 
