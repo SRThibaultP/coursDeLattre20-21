@@ -22,6 +22,14 @@ public :
 	//void Init(char a);
 	void Affiche();
 	void Affiche(char* strMesg);
+	int deplacer(char a, char b);
+	int calculerPosition();
+	char GetX();
+	char GetY();
+	char GetCouleur();
+	void SetX(char);
+	void SetY(char);
+	void SetCouleur(char);
 };
 
 

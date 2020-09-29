@@ -29,7 +29,40 @@ void Piece::Init(char a, char b, char coul){
 void Piece::Init(char a, char b){
 	Init(a,b);
 }
-/*
+
 void Piece::Init(char a){
 	Init(a);
 }*/
+char Piece::GetX(){
+	return x;
+}
+
+char Piece::GetY(){
+	return y;
+}
+
+char Piece::GetCouleur(){
+	return couleur;
+}
+
+void Piece::SetX(char a){
+	this -> x = a;
+}
+
+void Piece::SetY(char b){
+	this -> y = b;
+}
+
+void Piece::SetCouleur(char coul){
+	this -> couleur = coul;
+}
+
+int Piece::calculerPosition(){
+	int position = ((int)8*(x-0x31)+(int)(y-0x41));
+	return position;
+}
+
+int Piece::deplacer(char a, char b){
+	int position = ((int)8*(x-a)+(int)(y-b));
+	return position;
+}

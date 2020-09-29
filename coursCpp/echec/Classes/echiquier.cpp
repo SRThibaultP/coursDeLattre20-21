@@ -8,7 +8,7 @@
 #include "Piece.h"
 
 int main() {
-	Piece *p = new Piece('X');
+	Piece *p = new Piece('1', 'A', 'b');
 	p -> Affiche();
 	Piece *p1 = new Piece();
 	p1 -> Affiche();
@@ -16,6 +16,10 @@ int main() {
 	p2 -> Affiche();
 	Piece *p3 = new Piece('C', '1', 'n');
 	p3 -> Affiche();
+	cout << p -> calculerPosition() << endl;
+	cout << p -> deplacer('5', 'D') << endl;
+	p -> Affiche();
+	cout << p -> calculerPosition() << endl;
 }
 
 
