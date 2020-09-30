@@ -9,7 +9,7 @@
 #include "Piece.h"
 
 Pion::Pion(char a, char b, char coul) : Piece(a, b){
-	this -> dejajoue = true;
+	this -> dejajoue = false;
 }
 /*
 int deplacer(char a, char b){

@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2020-09-28T16:12:35
+# Project created by QtCreator 2020-09-29T16:38:44
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = HelloQt
+TARGET = MyTimer
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -25,12 +25,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        helloqt.cpp \
-    MyButton.cpp
+        mytimer.cpp
 
 HEADERS += \
-        helloqt.h \
-    MyButton.h
+        mytimer.h
 
 FORMS += \
-        helloqt.ui
+        mytimer.ui

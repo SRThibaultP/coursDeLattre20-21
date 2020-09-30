@@ -7,7 +7,7 @@
 
 #include "Piece.h"
 #include "Pion.h"
-/*
+
 int main() {
 	Piece *p = new Piece('1', 'A', 'b');
 	p -> Affiche();
@@ -22,11 +22,11 @@ int main() {
 	//cout << p -> calculerPosition() << endl;
 	p -> Affiche();
 }
-*/
 
+/*
 int main(){
 	Pion *b1 = new Pion('2', 'A', 'b');
 	b1 -> Affiche();
 	delete b1;
-}
+}*/
 

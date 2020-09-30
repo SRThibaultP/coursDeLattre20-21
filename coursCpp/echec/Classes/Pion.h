@@ -10,7 +10,7 @@
 #include "Piece.h"
 
 class Pion : public Piece{
-	bool dejajoue = false;
+	bool dejajoue;
 public :
 	Pion(char a = '1', char b = '2', char coul = 'b');
 	int deplacer(char a, char b);

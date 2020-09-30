@@ -67,6 +67,8 @@ int Piece::calculerPosition(){
 }
 
 int Piece::deplacer(char a, char b){
+	a = GetX() + a;
+	b = GetY() + b;
 	int position = ((int)8*(a-0x31)+(int)(b-0x41));
 	if(position <= 63){
 		SetX(a);

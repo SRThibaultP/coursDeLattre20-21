@@ -2,20 +2,25 @@
 #define HELLOQT_H
 
 #include <QMainWindow>
+#include <QtWidgets/QPushButton>
+#include <QPushButton>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class HelloQt; }
-QT_END_NAMESPACE
+namespace Ui {
+class HelloQt;
+}
 
 class HelloQt : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    HelloQt(QWidget *parent = nullptr);
+    explicit HelloQt(QWidget *parent = 0);
     ~HelloQt();
-
 private:
     Ui::HelloQt *ui;
+    QPushButton *pbQuitter;
+
 };
+
+
 #endif // HELLOQT_H

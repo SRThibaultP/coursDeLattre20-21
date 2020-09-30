@@ -14,6 +14,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -21,24 +22,29 @@ QT_BEGIN_NAMESPACE
 class Ui_HelloQt
 {
 public:
-    QWidget *centralwidget;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QWidget *centralWidget;
+    QMenuBar *menuBar;
+    QToolBar *mainToolBar;
+    QStatusBar *statusBar;
 
     void setupUi(QMainWindow *HelloQt)
     {
         if (HelloQt->objectName().isEmpty())
             HelloQt->setObjectName(QString::fromUtf8("HelloQt"));
-        HelloQt->resize(800, 600);
-        centralwidget = new QWidget(HelloQt);
-        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        HelloQt->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(HelloQt);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        HelloQt->setMenuBar(menubar);
-        statusbar = new QStatusBar(HelloQt);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        HelloQt->setStatusBar(statusbar);
+        HelloQt->resize(448, 208);
+        centralWidget = new QWidget(HelloQt);
+        centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        HelloQt->setCentralWidget(centralWidget);
+        menuBar = new QMenuBar(HelloQt);
+        menuBar->setObjectName(QString::fromUtf8("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 448, 22));
+        HelloQt->setMenuBar(menuBar);
+        mainToolBar = new QToolBar(HelloQt);
+        mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
+        HelloQt->addToolBar(Qt::TopToolBarArea, mainToolBar);
+        statusBar = new QStatusBar(HelloQt);
+        statusBar->setObjectName(QString::fromUtf8("statusBar"));
+        HelloQt->setStatusBar(statusBar);
 
         retranslateUi(HelloQt);
 
