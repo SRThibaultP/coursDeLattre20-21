@@ -26,9 +26,9 @@ class Ui_Chronometre
 public:
     QWidget *centralWidget;
     QLCDNumber *lcdNumber;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
+    QPushButton *start;
+    QPushButton *stop;
+    QPushButton *reset;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -43,15 +43,15 @@ public:
         lcdNumber = new QLCDNumber(centralWidget);
         lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
         lcdNumber->setGeometry(QRect(290, 70, 91, 51));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(20, 80, 89, 25));
-        pushButton_2 = new QPushButton(centralWidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(30, 200, 89, 25));
-        pushButton_3 = new QPushButton(centralWidget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(260, 190, 89, 25));
+        start = new QPushButton(centralWidget);
+        start->setObjectName(QString::fromUtf8("start"));
+        start->setGeometry(QRect(140, 70, 89, 25));
+        stop = new QPushButton(centralWidget);
+        stop->setObjectName(QString::fromUtf8("stop"));
+        stop->setGeometry(QRect(30, 200, 89, 25));
+        reset = new QPushButton(centralWidget);
+        reset->setObjectName(QString::fromUtf8("reset"));
+        reset->setGeometry(QRect(260, 190, 89, 25));
         Chronometre->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(Chronometre);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -72,9 +72,9 @@ public:
     void retranslateUi(QMainWindow *Chronometre)
     {
         Chronometre->setWindowTitle(QApplication::translate("Chronometre", "Chronometre", nullptr));
-        pushButton->setText(QApplication::translate("Chronometre", "PushButton", nullptr));
-        pushButton_2->setText(QApplication::translate("Chronometre", "PushButton", nullptr));
-        pushButton_3->setText(QApplication::translate("Chronometre", "PushButton", nullptr));
+        start->setText(QApplication::translate("Chronometre", "start", nullptr));
+        stop->setText(QApplication::translate("Chronometre", "stop", nullptr));
+        reset->setText(QApplication::translate("Chronometre", "reset", nullptr));
     } // retranslateUi
 
 };

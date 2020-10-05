@@ -21,16 +21,24 @@ public:
     void resetCount();
     void updateCount();
 
-public slots:
+//public slots:
+    //void onTimer_Tick();
+    //void onButton_Start();
+    //void onButton_Reset();
+
+private slots:
     void onTimer_Tick();
-    void onButton_Start();
-    void onButton_Reset();
+    void on_start_clicked();
+
+    void on_reset_clicked();
+
+
 
 private:
     Ui::Chronometre *ui;
-    QPushButton *m_bout_start;
-    QPushButton *m_bout_stop;
-    QPushButton *m_bout_reset;
+    //QPushButton *m_bout_start;
+    //QPushButton *m_bout_stop;
+    //QPushButton *m_bout_reset;
 
     QGridLayout *m_layout;
 
@@ -40,4 +48,6 @@ private:
 
     int     countTimer;
 };
+
+
 #endif // CHRONOMETRE_H
