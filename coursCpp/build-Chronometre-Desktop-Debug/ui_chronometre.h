@@ -16,7 +16,6 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -24,45 +23,41 @@ QT_BEGIN_NAMESPACE
 class Ui_Chronometre
 {
 public:
-    QWidget *centralWidget;
-    QLCDNumber *lcdNumber;
+    QWidget *centralwidget;
     QPushButton *start;
+    QPushButton *quit;
     QPushButton *stop;
-    QPushButton *reset;
-    QMenuBar *menuBar;
-    QToolBar *mainToolBar;
-    QStatusBar *statusBar;
+    QLCDNumber *lcdNumber;
+    QMenuBar *menubar;
+    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *Chronometre)
     {
         if (Chronometre->objectName().isEmpty())
             Chronometre->setObjectName(QString::fromUtf8("Chronometre"));
-        Chronometre->resize(400, 300);
-        centralWidget = new QWidget(Chronometre);
-        centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        lcdNumber = new QLCDNumber(centralWidget);
-        lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
-        lcdNumber->setGeometry(QRect(290, 70, 91, 51));
-        start = new QPushButton(centralWidget);
+        Chronometre->resize(616, 554);
+        centralwidget = new QWidget(Chronometre);
+        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        start = new QPushButton(centralwidget);
         start->setObjectName(QString::fromUtf8("start"));
-        start->setGeometry(QRect(140, 70, 89, 25));
-        stop = new QPushButton(centralWidget);
+        start->setGeometry(QRect(40, 30, 231, 241));
+        quit = new QPushButton(centralwidget);
+        quit->setObjectName(QString::fromUtf8("quit"));
+        quit->setGeometry(QRect(40, 310, 541, 191));
+        stop = new QPushButton(centralwidget);
         stop->setObjectName(QString::fromUtf8("stop"));
-        stop->setGeometry(QRect(30, 200, 89, 25));
-        reset = new QPushButton(centralWidget);
-        reset->setObjectName(QString::fromUtf8("reset"));
-        reset->setGeometry(QRect(260, 190, 89, 25));
-        Chronometre->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(Chronometre);
-        menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 22));
-        Chronometre->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(Chronometre);
-        mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
-        Chronometre->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(Chronometre);
-        statusBar->setObjectName(QString::fromUtf8("statusBar"));
-        Chronometre->setStatusBar(statusBar);
+        stop->setGeometry(QRect(280, 30, 301, 271));
+        lcdNumber = new QLCDNumber(centralwidget);
+        lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
+        lcdNumber->setGeometry(QRect(40, 270, 231, 31));
+        Chronometre->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(Chronometre);
+        menubar->setObjectName(QString::fromUtf8("menubar"));
+        menubar->setGeometry(QRect(0, 0, 616, 22));
+        Chronometre->setMenuBar(menubar);
+        statusbar = new QStatusBar(Chronometre);
+        statusbar->setObjectName(QString::fromUtf8("statusbar"));
+        Chronometre->setStatusBar(statusbar);
 
         retranslateUi(Chronometre);
 
@@ -73,8 +68,8 @@ public:
     {
         Chronometre->setWindowTitle(QApplication::translate("Chronometre", "Chronometre", nullptr));
         start->setText(QApplication::translate("Chronometre", "start", nullptr));
+        quit->setText(QApplication::translate("Chronometre", "quit", nullptr));
         stop->setText(QApplication::translate("Chronometre", "stop", nullptr));
-        reset->setText(QApplication::translate("Chronometre", "reset", nullptr));
     } // retranslateUi
 
 };

@@ -2,52 +2,45 @@
 #define CHRONOMETRE_H
 
 #include <QMainWindow>
-#include <QPushButton>
-#include <QGridLayout>
-#include <QLCDNumber>
 #include <QTimer>
+#include <QDebug>
+#include <QPushButton>
+#include <QLCDNumber>
 
-
+QT_BEGIN_NAMESPACE
 namespace Ui { class Chronometre; }
-
+QT_END_NAMESPACE
 
 class Chronometre : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit Chronometre(QWidget *parent = 0);
+    Chronometre(QWidget *parent = nullptr);
     ~Chronometre();
-    void resetCount();
-    void updateCount();
-
-//public slots:
-    //void onTimer_Tick();
-    //void onButton_Start();
-    //void onButton_Reset();
-
-private slots:
-    void onTimer_Tick();
-    void on_start_clicked();
-
-    void on_reset_clicked();
-
-
 
 private:
     Ui::Chronometre *ui;
-    //QPushButton *m_bout_start;
-    //QPushButton *m_bout_stop;
-    //QPushButton *m_bout_reset;
+public slots:
 
-    QGridLayout *m_layout;
+    void slotStart();
+    void slotStop();
+    void slotTimeOut();
 
-    QLCDNumber *m_lcd;
 
-    QTimer *timer_chrono;
+    void on_start_clicked();
 
-    int     countTimer;
+    void on_stop_clicked();
+
+private slots:
+    void on_quit_clicked();
+
+
+private :
+    // Attributs prives
+    QTimer *mon_timer;
+    QLCDNumber *mlcd;
+    int compteur;
+
 };
-
-
 #endif // CHRONOMETRE_H

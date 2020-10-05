@@ -1,0 +1,11 @@
+#include "chronometre.h"
+
+#include <QApplication>
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    chronometre w;
+    w.show();
+    return a.exec();
+}
