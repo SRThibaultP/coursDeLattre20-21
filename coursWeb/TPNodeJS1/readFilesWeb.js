@@ -1,8 +1,8 @@
 const https = require('https');
 
-/*https.get('https://bouygues.testdebit.info/100M.iso', (resp) => {
+console.log("Lecture du fichier de 100Mo : " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds() + ":" + new Date().getMilliseconds());
+https.get('https://bouygues.testdebit.info/100M.iso', (resp) => {
   var deb3 = Date.now();
-  console.log("Lecture du fichier de 100Mo : " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds() + ":" + new Date().getMilliseconds());
   let data = '';
 
   // A chunk of data has been received.
@@ -22,11 +22,11 @@ const https = require('https');
 
 }).on("error", (err) => {
   console.log("Error: " + err.message);
-});*/
+});
 
+console.log("Lecture du fichier de 10Mo : " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds() + ":" + new Date().getMilliseconds());
 https.get('https://bouygues.testdebit.info/10M.iso', (resp) => {
   var deb2 = Date.now();
-  console.log("Lecture du fichier de 10Mo : " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds() + ":" + new Date().getMilliseconds());
   let data = '';
 
   // A chunk of data has been received.
@@ -48,9 +48,9 @@ https.get('https://bouygues.testdebit.info/10M.iso', (resp) => {
   console.log("Error: " + err.message);
 });
 
+console.log("Lecture du fichier de 1Mo : " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds() + ":" + new Date().getMilliseconds());
 https.get('https://bouygues.testdebit.info/1M.iso', (resp) => {
   var deb1 = Date.now();
-  console.log("Lecture du fichier de 1Mo : " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds() + ":" + new Date().getMilliseconds());
   let data = '';
 
   // A chunk of data has been received.
