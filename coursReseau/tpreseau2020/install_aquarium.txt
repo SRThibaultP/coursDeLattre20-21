@@ -1,0 +1,59 @@
+
+https://www.olimex.com/wiki/A20-OLinuXino-MICRO
+
+l'image installée est A20-OLinuXino-MICRO Debian Jessie with kernel 3.4.103+ release 12
+
+
+login / mot de passe de démarrage:
+login : olimex / Password : olimex (oli,ex avec le clavier qwerty)
+login : root / Password : olimex (oli,ex avec le clavier qwerty)
+
+
+
+Installation du clavier
+
+dans /etc/default/keybord changer us en fr
+
+Installation du réseau:
+
+dans /etc/network/interfaces
+
+modifier #auto eth0 en auto eth0
+modifier les adresses et les masques pour être dans le réseau souhaité
+modifier la passerelle en ajoutant
+gateway 192.168.1.1 (si la passerelle est 192.168.1.1)
+
+installer la recherche du service dns:
+dans /etc/resolv.conv 
+modifier nameserver avec l'adresse d'un serveur dns: 
+en local la box renvoie généralement une adresse DNS 192.168.1.1
+adresse DNS d'un FAI google, orange, SFR, .....
+
+vous aurez besoin d'augmenter l'espace mémoire
+l'instruction
+#df 
+permet de connaitre le ratio espace utilisé espace libre.
+
+https://github.com/OLIMEX/OLINUXINO/blob/master/SOFTWARE/A20/A20-build-3.4.103/A20-olimex_kernel_3.4.103%2B_Jessie_with_camera_support_image_description.txt
+
+./resize_sd.sh /dev/mmcblk0 2
+resize2fs /dev/mmcblk0p1
+
+dans le wiki on vous donnera les instructions:
+ pour utiliser tout l'espace mémoire de la sdcard: resize
+ pour changer d'écran change_display
+ 
+Installation de QT5
+sudo apt-get install qt5-default g++ libcppunit-dev libmysqlclient-dev libqt5sql5-mysql
+
+Installation des services Web:
+sudo apt-get install php5
+sudo apt-get install apache2
+sudo apt-get install mysql-server
+
+Installation des services Qt pour le web:
+sudo apt-get install libmysqlclient-dev libqt5sql5-mysql
+
+
+si besoin du port com
+apt-get install libqt5serialport5-dev
