@@ -1,0 +1,10 @@
+//suppression d'une image
+
+    ui->label->setPixmap(QPixmap());
+    ui->label->repaint();
+ 
+// Ajout d'une image
+
+    QPixmap mypix ("voiture.jpg");
+    ui->label->setPixmap(mypix);
+    ui->label->repaint();
