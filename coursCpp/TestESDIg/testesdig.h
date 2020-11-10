@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "PortLpt.h"
+#include "afficheur.h"
+#include "barriere.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class TestESDIg; }
@@ -12,6 +14,8 @@ class TestESDIg : public QMainWindow
 {
     Q_OBJECT
     PortLpt *mlpt;
+    Afficheur * mafficheur;
+    Barriere * mbarriere;
 public:
     TestESDIg(QWidget *parent = nullptr);
     ~TestESDIg();
@@ -41,7 +45,16 @@ private slots:
 
     void on_ArretBS_clicked();
 
+    void on_spinBox_valueChanged(int arg1);
+
 private:
     Ui::TestESDIg *ui;
 };
+/*
+class TestESDIg : Mainwindow {
+    Q_OBJECT
+    PortLpt * m_lpt;
+    monafficheur * mafficheur;
+}
+*/
 #endif // TESTESDIG_H

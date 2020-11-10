@@ -18,11 +18,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     PortLpt.cpp \
     main.cpp \
-    testesdig.cpp
+    testesdig.cpp \
+    afficheur.cpp \
+    barriere.cpp \
+    barrieresortie.cpp \
+    bouton.cpp \
+    boutonentree.cpp
 
 HEADERS += \
     PortLpt.h \
-    testesdig.h
+    testesdig.h \
+    afficheur.h \
+    barriere.h \
+    barrieresortie.h \
+    bouton.h \
+    boutonentree.h
 
 FORMS += \
     testesdig.ui

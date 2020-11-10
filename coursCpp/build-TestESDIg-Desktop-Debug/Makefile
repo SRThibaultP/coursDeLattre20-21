@@ -35,7 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = TestESDIg1.0.0
-DISTDIR = /home/t/tpech/build-TestESDIg-Desktop-Debug/.tmp/TestESDIg1.0.0
+DISTDIR = /home/t/tpech/Desktop/tpe/build-TestESDIg-Desktop-Debug/.tmp/TestESDIg1.0.0
 LINK          = g++
 LFLAGS        = 
 LIBS          = $(SUBLIBS) -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
@@ -52,10 +52,20 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../TestESDIg/PortLpt.cpp \
 		../TestESDIg/main.cpp \
-		../TestESDIg/testesdig.cpp moc_testesdig.cpp
+		../TestESDIg/testesdig.cpp \
+		../TestESDIg/afficheur.cpp \
+		../TestESDIg/barriere.cpp \
+		../TestESDIg/barrieresortie.cpp \
+		../TestESDIg/bouton.cpp \
+		../TestESDIg/boutonentree.cpp moc_testesdig.cpp
 OBJECTS       = PortLpt.o \
 		main.o \
 		testesdig.o \
+		afficheur.o \
+		barriere.o \
+		barrieresortie.o \
+		bouton.o \
+		boutonentree.o \
 		moc_testesdig.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -132,9 +142,19 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../TestESDIg/TestESDIg.pro ../TestESDIg/PortLpt.h \
-		../TestESDIg/testesdig.h ../TestESDIg/PortLpt.cpp \
+		../TestESDIg/testesdig.h \
+		../TestESDIg/afficheur.h \
+		../TestESDIg/barriere.h \
+		../TestESDIg/barrieresortie.h \
+		../TestESDIg/bouton.h \
+		../TestESDIg/boutonentree.h ../TestESDIg/PortLpt.cpp \
 		../TestESDIg/main.cpp \
-		../TestESDIg/testesdig.cpp
+		../TestESDIg/testesdig.cpp \
+		../TestESDIg/afficheur.cpp \
+		../TestESDIg/barriere.cpp \
+		../TestESDIg/barrieresortie.cpp \
+		../TestESDIg/bouton.cpp \
+		../TestESDIg/boutonentree.cpp
 QMAKE_TARGET  = TestESDIg
 DESTDIR       = 
 TARGET        = TestESDIg
@@ -318,8 +338,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../TestESDIg/PortLpt.h ../TestESDIg/testesdig.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../TestESDIg/PortLpt.cpp ../TestESDIg/main.cpp ../TestESDIg/testesdig.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../TestESDIg/PortLpt.h ../TestESDIg/testesdig.h ../TestESDIg/afficheur.h ../TestESDIg/barriere.h ../TestESDIg/barrieresortie.h ../TestESDIg/bouton.h ../TestESDIg/boutonentree.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../TestESDIg/PortLpt.cpp ../TestESDIg/main.cpp ../TestESDIg/testesdig.cpp ../TestESDIg/afficheur.cpp ../TestESDIg/barriere.cpp ../TestESDIg/barrieresortie.cpp ../TestESDIg/bouton.cpp ../TestESDIg/boutonentree.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../TestESDIg/testesdig.ui $(DISTDIR)/
 
 
@@ -356,10 +376,13 @@ compiler_moc_header_make_all: moc_testesdig.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_testesdig.cpp
 moc_testesdig.cpp: ../TestESDIg/PortLpt.h \
+		../TestESDIg/afficheur.h \
+		../TestESDIg/barriere.h \
+		../TestESDIg/barrieresortie.h \
 		../TestESDIg/testesdig.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/t/tpech/TestESDIg -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../TestESDIg/testesdig.h -o moc_testesdig.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/t/tpech/Desktop/tpe/TestESDIg -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../TestESDIg/testesdig.h -o moc_testesdig.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -384,13 +407,42 @@ PortLpt.o: ../TestESDIg/PortLpt.cpp ../TestESDIg/PortLpt.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o PortLpt.o ../TestESDIg/PortLpt.cpp
 
 main.o: ../TestESDIg/main.cpp ../TestESDIg/testesdig.h \
-		../TestESDIg/PortLpt.h
+		../TestESDIg/PortLpt.h \
+		../TestESDIg/afficheur.h \
+		../TestESDIg/barriere.h \
+		../TestESDIg/barrieresortie.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../TestESDIg/main.cpp
 
 testesdig.o: ../TestESDIg/testesdig.cpp ../TestESDIg/testesdig.h \
 		../TestESDIg/PortLpt.h \
+		../TestESDIg/afficheur.h \
+		../TestESDIg/barriere.h \
+		../TestESDIg/barrieresortie.h \
 		ui_testesdig.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o testesdig.o ../TestESDIg/testesdig.cpp
+
+afficheur.o: ../TestESDIg/afficheur.cpp ../TestESDIg/afficheur.h \
+		../TestESDIg/PortLpt.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o afficheur.o ../TestESDIg/afficheur.cpp
+
+barriere.o: ../TestESDIg/barriere.cpp ../TestESDIg/barriere.h \
+		../TestESDIg/PortLpt.h \
+		../TestESDIg/barrieresortie.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o barriere.o ../TestESDIg/barriere.cpp
+
+barrieresortie.o: ../TestESDIg/barrieresortie.cpp ../TestESDIg/barrieresortie.h \
+		../TestESDIg/PortLpt.h \
+		../TestESDIg/barriere.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o barrieresortie.o ../TestESDIg/barrieresortie.cpp
+
+bouton.o: ../TestESDIg/bouton.cpp ../TestESDIg/bouton.h \
+		../TestESDIg/PortLpt.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bouton.o ../TestESDIg/bouton.cpp
+
+boutonentree.o: ../TestESDIg/boutonentree.cpp ../TestESDIg/boutonentree.h \
+		../TestESDIg/bouton.h \
+		../TestESDIg/PortLpt.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o boutonentree.o ../TestESDIg/boutonentree.cpp
 
 moc_testesdig.o: moc_testesdig.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_testesdig.o moc_testesdig.cpp

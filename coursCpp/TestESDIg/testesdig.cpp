@@ -7,6 +7,7 @@ TestESDIg::TestESDIg(QWidget *parent)
 {
     ui->setupUi(this);
     mlpt=new PortLpt();
+    mafficheur = new Afficheur(mlpt);
 }
 
 TestESDIg::~TestESDIg()
@@ -86,12 +87,18 @@ void TestESDIg::on_DescenteBS_clicked()
 
 void TestESDIg::on_MonteeBS_clicked()
 {
-    mlpt->setBit(0x20, false);
-    mlpt->setBit(0x10, true);
+    //mlpt->setBit(0x20, false);
+    //mlpt->setBit(0x10, true);
+    mbarriere -> monter();
 }
 
 void TestESDIg::on_ArretBS_clicked()
 {
     mlpt->setBit(0x20, false);
     mlpt->setBit(0x10, false);
+}
+
+void TestESDIg::on_spinBox_valueChanged(int arg1)
+{
+    mafficheur -> setval(arg1);
 }
