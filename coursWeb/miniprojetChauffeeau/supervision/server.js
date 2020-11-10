@@ -12,7 +12,7 @@ request({
     //console.log(body);
     bodyjs = JSON.parse(body);
 
-    fs.writeFile('datameteo.json', body, (err) => {
+    fs.writeFile('datameteo.json', "meteo = '[" + body + "]';", (err) => {
       if (err) throw err;
       console.log('Data written to file');
     })

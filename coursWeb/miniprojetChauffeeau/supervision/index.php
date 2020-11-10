@@ -10,6 +10,7 @@
 	<script language="javascript" src="./js/dessiner.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script language="javascript" src="./js/suncalc.js"></script>
+	<script language="javascript" src="datameteo.json"></script>
 
 </head>
 <!-- <body onload="gererWS();mettreAJourData();Clock()" > -->
@@ -55,14 +56,14 @@
 <p id="DirectionVent" class="etiquette"></p>
 </aside>
 <!--AFFICHAGE INFORMATION VOLET-->
+
 <aside id="schemaVolet"> <div class="separation"><a>Volet</a></div>
 
 </br>
-<div class="input" id="bouton2" style="display: none;">
-
-<input type="text" placeholder="Entrez une ville" class="input_text">
-<input type="submit" value="Entrer" class="submit">
-</div>
+<form class="input" id="bouton2" style="display: none;" method="post">
+	<input type="text" placeholder="Entrez une ville" class="input_text">
+	<input type="submit" value="Entrer">
+</form>
 </br>
 
 <p id="nomMesure">Angle :</p>
@@ -78,9 +79,9 @@
 
 <label class="switch">
 	<input type="checkbox"  onClick="Leswitch()"  >
-		<span class="slider round">
+	<span class="slider round">
 
-</span>
+	</span>
 </label>
 
 <p2> Pilotage manuel </p2>
@@ -99,12 +100,6 @@
 	<input type="submit" value="MONTEE" name="panneau">
 </form>
 
-<script language="javascript" src="./js/slider.js"></script>
-<script language="javascript" src="./js/meteo.js"></script>
-<script language="javascript" src="./js/alert.js"></script>
-
-
-
 
 
 </br></br>
@@ -114,7 +109,14 @@
 </br></br></br>
 </div>
 
-
+<aside id="SOLEIL">	<div class="separation"><a>Soleil</a></div>
+	<p id="nomMesure">Levé :</p>
+	<p id="heureLevSol" class="etiquette"></p></br>
+</br>
+</br>
+<p id="nomMesure">Couché :</p>
+<p id="heureCouSol" class="etiquette"></p>
+</aside>
 
 </aside>
 <!--Fin de la partie aside-->
@@ -126,5 +128,9 @@
 
 </footer>
 <!--Fin de pied de page-->
+<script language="javascript" src="./js/slider.js"></script>
+<script language="javascript" src="./js/meteo.js"></script>
+<script language="javascript" src="./js/alert.js"></script>
+<script language="javascript" src="./js/meteosrvside.js"></script>
 </body>
 </html>
