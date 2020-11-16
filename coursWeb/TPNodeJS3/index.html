@@ -1,0 +1,56 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cube SA</title>
+
+	<link href="css/style.css" rel="stylesheet" >
+	<script language="javascript" src="./js/horloge.js" ></script>
+	<script language="javascript" src="./js/mettreAJourData.js"></script>
+	<script language="javascript" src="./js/dernieresData.js"></script>
+	<script language="javascript" src="./js/initialiserMesuresTotal.js"></script>
+	<link rel="import" src="../dosis.ttf">
+</head>
+<body onload="mettreAJourData()">
+	<header>
+		Supervision chauffe eau solaire thermique
+	</header>
+	<!--Partie Navigation-->
+	<nav>
+		<p id="presentationVille"> Prévisions météorologiques</p>
+
+		<p id="insertClock" ></p>
+
+	</nav>
+	<!--Fin de la partie navigation-->
+
+	<!--AFFICHAGE TEMPÉRATURE-->
+	<aside id="TEMP"><div class="separation">	<a>Températures</a></div>
+		</br><p id="nomMesure">Sonde 1:</p>
+		<p id="TemperatureSonde1" class="etiquette"></p>
+		</br></br><p id="nomMesure">Sonde 2 :</p>
+		<p id="TemperatureSonde2" class="etiquette"></p>
+		</br></br><p id="nomMesure">Extérieure :</p>
+		<p id="Temperature" class="etiquette"></p>
+	</aside>
+	<!--AFFICHAGE INFORMATIONS VENT-->
+	<aside id="VENT">	<div class="separation"><a>Vent</a></div>
+		</br><p id="nomMesure">Vitesse :</p>
+		<p id="VitesseVent" class="etiquette"></p></br>
+		</br></br><p id="nomMesure">Direction :</p>
+		<p id="DirectionVent" class="etiquette"></p>
+	</aside>
+	<!--AFFICHAGE INFORMATION VOLET-->
+	<aside id="schemaVolet"> <div class="separation"><a>Volet</a></div>
+	</br><p id="nomMesure"Ò>angle :</p>
+		<p id="positionVolet" class="etiquette"></p>
+	</aside>
+	<!--Fin de la partie aside-->
+
+	<!--Pied de page-->
+	<footer>
+		<div>Lycée de Lattre de Tassigny			2018</div>
+	</footer>
+	<!--Fin de pied de page-->
+</body>
+</html>
