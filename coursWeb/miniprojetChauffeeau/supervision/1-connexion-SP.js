@@ -1,5 +1,5 @@
 var serialport=require("serialport");
-var SP1=new serialport("/dev/ttyUSB0",{
+var SP1=new serialport("/dev/ttyACM0",{
 //baudrate
 baudRate:9600
 });

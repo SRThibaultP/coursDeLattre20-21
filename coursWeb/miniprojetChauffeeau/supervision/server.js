@@ -3,15 +3,17 @@ var fs = require('fs');
 var path = require('path');
 var request = require('request');
 
+var ville = "La Roche-sur-Yon"
+
 request({
-  'url':'http://api.openweathermap.org/data/2.5/weather?q=La Roche-sur-Yon,fr&unit=metric&lang=fr&appid=fdbedff7f6cf7498d6b06c7b4d92b176',
+  'url':'http://api.openweathermap.org/data/2.5/weather?q='+ ville + ',fr&unit=metric&lang=fr&appid=fdbedff7f6cf7498d6b06c7b4d92b176',
   'method': "GET",
   'proxy':'http://192.168.10.254:3128'
 },function (error, response, body) {
   if (!error && response.statusCode == 200) {
     //console.log(body);
     bodyjs = JSON.parse(body);
-
+    console.log(body);
     fs.writeFile('datameteo.json', "meteo = '[" + body + "]';", (err) => {
       if (err) throw err;
       console.log('Data written to file');
@@ -111,9 +113,16 @@ http.createServer(function (request, response) {
     });
 
     request.on('end', function () {
-        console.log(body);
+      //if (body == "");
+      //else console.log(body);
       //request.writeHead(200);
       //request.end(postHTML);
+      switch (body) {
+        case "":
+          break;
+        default:
+        console.log(body);
+      }
     });
 
 }).listen(80);

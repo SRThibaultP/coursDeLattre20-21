@@ -61,7 +61,7 @@
 
 </br>
 <form class="input" id="bouton2" style="display: none;" method="post">
-	<input type="text" placeholder="Entrez une ville" class="input_text">
+	<input type="text" placeholder="Entrez une ville" class="input_text" name="ville">
 	<input type="submit" value="Entrer">
 </form>
 </br>
@@ -99,9 +99,10 @@
 	<input type="submit" value="DESCENTE" name="panneau">
 	<input type="submit" value="MONTEE" name="panneau">
 </form>
-
-
-
+</br>
+<p id="nomMesure">Etat du système</p>
+<p id="etatSysteme" class="etiquette"></p>
+</br>
 </br></br>
 <div>
 	<!-- Insertion du canvas pour le dessin du toit -->
